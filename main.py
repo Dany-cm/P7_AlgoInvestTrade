@@ -2,10 +2,10 @@ from bruteforce import bruteforce, get_info_from_file
 import time
 
 def Menu():
-    print('Main Menu:')
-    print('1. Bruteforce')
-    print('2. Optimized')
-    print('3. Quit')
+    print('Menu Principal:')
+    print('1. Force brute')
+    print('2. Optimisé')
+    print('3. Quitter')
 
 while True:
     Menu()
@@ -14,13 +14,15 @@ while True:
         if choice == 1:
             start = time.time()
             result = bruteforce(500, get_info_from_file(input('Select a CSV file: ')))
-            print(f"Voici la liste d'action les plus rentable {result[1]} pour un budget maximum de 500€, notre bénéfice total s'élève à {result[0]} €")
+            print("Voici la liste d'action les plus rentable pour un budget maximum de 500€", '\n')
+            print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in result[1]]), '\n')
+            print(f"Notre bénéfice total s'élève à {result[0]} €", '\n')
             end = time.time()
-            print(f"Temps d'exécution: {end - start} secondes")
+            print(f"Temps d'exécution: {round((end - start), 2)} secondes", '\n')
         if choice == 2:
             print('NYI')
         if choice == 3:
             quit()
     except ValueError:
-        print("You must enter a number from the menu")
+        print("Sélectionner un numéro valide")
 
