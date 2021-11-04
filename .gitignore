@@ -1,4 +1,3 @@
 /.vscode
 /venv
-__pycache__/
-__pycache__/bruteforce.cpython-310.pyc
+/__pycache__
