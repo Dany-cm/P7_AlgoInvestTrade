@@ -1,10 +1,10 @@
 def optimized(capacite, action):
     best_action = []
 
-    sorted(action, key=lambda x: x['profit'], reverse=True)
+    sorted(action, key=lambda x: x[2], reverse=True)
 
     for x in action:
-        if action['price'] <= capacite:
-            capacite = capacite - action['price']
+        if x[1] <= capacite:
+            capacite = capacite - x[1]
             best_action.append(x)
     return best_action
