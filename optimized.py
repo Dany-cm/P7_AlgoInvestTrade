@@ -1,12 +1,12 @@
-def optimized(capacite, action):
+def optimized(capacite, actions):
     """ Sort by profit in descending order """
 
     best_action = []
 
-    sorted(action, key=lambda x: x[2], reverse=True)
+    sorted(actions, key=lambda x: x.profit, reverse=True)
 
-    for x in action:
-        if x[1] <= capacite:
-            capacite = capacite - x[1]
-            best_action.append(x)
+    for action in actions:
+        if action.price <= capacite:
+            capacite = capacite - action.price
+            best_action.append(action)
     return best_action
