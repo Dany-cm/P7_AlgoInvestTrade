@@ -1,4 +1,6 @@
 def optimized(capacite, action):
+    """ Sort by profit in descending order """
+
     best_action = []
 
     sorted(action, key=lambda x: x[2], reverse=True)
