@@ -1,19 +1,21 @@
-from bruteforce import bruteforce
-from optimized_naive import optimized_naive
-from optimized_dynamic import optimized_dynamic
-
-from file import get_info_from_file
 import timeit
 
-def Menu():
+from bruteforce import bruteforce
+from file import get_info_from_file
+from optimized_dynamic import optimized_dynamic
+from optimized_naive import optimized_naive
+
+
+def menu():
     print('Menu Principal:')
     print('1. Force brute')
     print('2. Optimisé Naïve')
     print('3. Optimisé Dynamique')
     print('4. Quitter')
 
+
 while True:
-    Menu()
+    menu()
     print()
     try:
         choice = int(input('Sélectionner une option: '))
@@ -42,7 +44,7 @@ while True:
             print()
             for action in result:
                 print(action)
-            benefice = sum(map(lambda action: action.benefice, result))
+            benefice = sum(map(lambda action_list: action_list.benefice, result))
             print()
             print(f"Notre bénéfice total s'élève à {benefice:>.2f}€")
             print()

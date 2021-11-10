@@ -14,7 +14,7 @@ class Action:
 
     action_list = [];
     possibilities = [];
-    
+
     def get_info_from_file(file):
         with open(file) as file:
             reader = csv.DictReader(file)
@@ -46,6 +46,7 @@ class Action:
 
     def calculate_total_price(actions):
         return sum(x.price for x in actions)
+
 
 Action.get_info_from_file('dataset_1.csv')
 start = time.time()

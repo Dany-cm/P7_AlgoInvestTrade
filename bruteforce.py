@@ -6,7 +6,8 @@ def bruteforce(capacity, actions_available, actions_selected=[]):
         currentvalue = actions_available[0]
 
         if currentvalue.price <= capacity:
-            benefice_2, actions_for_benefice_2 = bruteforce(capacity - currentvalue.price, actions_available[1:], actions_selected + [currentvalue])
+            benefice_2, actions_for_benefice_2 = bruteforce(capacity - currentvalue.price, actions_available[1:],
+                                                            actions_selected + [currentvalue])
 
             if benefice_1 < benefice_2:
                 return benefice_2, actions_for_benefice_2
